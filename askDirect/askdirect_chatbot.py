@@ -5,7 +5,7 @@ from google.api_core.exceptions import GoogleAPIError
 import urllib.parse
 
 # --- CONFIG ---
-GOOGLE_API_KEY = "st.secrets["api_key"]"  # 🔐 Replace with your valid Gemini API key
+GOOGLE_API_KEY = st.secrets["api_key"]  # 🔐 Replace with your valid Gemini API key
 
 # --- PAGE SETUP ---
 st.markdown("""
