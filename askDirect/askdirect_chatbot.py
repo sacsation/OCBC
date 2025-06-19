@@ -39,7 +39,7 @@ st.markdown("""
 @st.cache_data
 def load_keyword_email_mapping():
     try:
-        df = pd.read_csv("email_keywords.csv")
+        df = pd.read_csv("askDirect/email_keywords.csv")
         return {row["keywords"].strip().lower(): row["email"].strip() for _, row in df.iterrows()}
     except Exception as e:
         st.error(f"❌ Error loading CSV: {e}")
