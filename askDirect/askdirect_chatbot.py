@@ -6,7 +6,7 @@ import urllib.parse #Use urllib.parse.quote to safely encode subject and body
 
 
 # --- CONFIG ---
- # 🔐 Replace with a valid Gemini API key
+GOOGLE_API_KEY = st.secrets["api_key"] # 🔐 Replace with a valid Gemini API key
 
 # --- PAGE SETUP ---
 
@@ -50,7 +50,7 @@ keyword_to_email = load_keyword_email_mapping()
 # --- GEMINI SETUP ---
 use_gemini = False
 try:
-    genai.configure(api_key=api_key)
+    genai.configure(api_key=GOOGLE_API_KEY)
     model = genai.GenerativeModel("gemini-1.5-flash")  # More affordable/faster model
     test_response = model.generate_content("Say OK.")
     if "ok" in test_response.text.strip().lower():
