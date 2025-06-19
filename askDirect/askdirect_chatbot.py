@@ -32,7 +32,7 @@ st.markdown("""
 @st.cache_data
 def load_keyword_email_mapping():
     try:
-        df = pd.read_csv("email_keywords.csv")
+        df = pd.read_csv("askDirect/email_keywords.csv")
         df['keywords'] = df['keywords'].str.strip().str.lower()
         return df
     except Exception as e:
